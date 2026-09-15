@@ -1,0 +1,3 @@
+[versions]
+dotenvGradleVersion = "0.1.0"
+jdk = "21"
