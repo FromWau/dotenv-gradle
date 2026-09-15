@@ -1,3 +1,7 @@
 [versions]
 dotenvGradleVersion = "0.1.0"
+dotenv-gradle = "0.1.0"
 jdk = "21"
+
+[plugins]
+dotenv = { id = "com.fromwau.dotenv", version.ref = "dotenv-gradle" }

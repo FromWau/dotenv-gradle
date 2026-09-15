@@ -41,8 +41,9 @@ val token: String? = dotEnv["MAVEN_TOKEN"]                     // the value now,
 val later: Provider<String> = dotEnv.provider("MAVEN_TOKEN")    // read when a task or setting asks
 ```
 
-- **The file** is the `.env` in the root project's directory, the same one for every project in the build.
-  Keep it out of git, and commit a `.env.example` that lists the keys.
+- **The file** is the `.env` in the root project's directory, the same one for every project in the build. In a
+  composite build, each included build has its own root, and so its own `.env`. Keep it out of git, and commit a
+  `.env.example` that lists the keys.
 - **The format** is one `KEY=VALUE` per line. Blank lines, lines starting with `#` and lines without `=` are
   skipped, and spaces around the key and the value are trimmed. Everything after the first `=` is the value, taken
   as written: there are no quotes, no `export` and no `${}` expansion. `KEY=` gives an empty string, and a

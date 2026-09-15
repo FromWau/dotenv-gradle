@@ -4,9 +4,9 @@ import org.gradle.api.provider.Provider
 import org.gradle.api.provider.ProviderFactory
 
 /**
- * The `.env` in the root project's directory, as `KEY=VALUE` lines; blank lines and lines starting with `#` are
- * skipped. A variable set in the environment wins over the file, unless it is blank. Both are read through Gradle's
- * providers, so the configuration cache notices when either one changes.
+ * The `.env` in the root project's directory, as `KEY=VALUE` lines; blank lines, lines starting with `#` and lines
+ * without `=` are skipped. A variable set in the environment wins over the file, unless it is blank. Both are read
+ * through Gradle's providers, so the configuration cache notices when either one changes.
  */
 public class DotEnv internal constructor(
     private val providers: ProviderFactory,

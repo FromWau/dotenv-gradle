@@ -10,7 +10,7 @@ public class DotEnvPlugin : Plugin<Project> {
             project.objects.fileProperty().fileValue(project.rootDir.resolve(".env"))
         project.extensions.add(
             "dotEnv",
-            DotEnv(project.providers, project.providers.fileContents(file).asText)
+            DotEnv(project.providers, project.providers.fileContents(file).asText),
         )
     }
 }
